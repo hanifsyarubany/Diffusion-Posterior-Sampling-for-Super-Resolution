@@ -1,6 +1,10 @@
 # Diffusion Posterior Sampling (DPS) for Super-Resolution
 
-This repository implements **Diffusion Posterior Sampling (DPS)** for **single-image super-resolution (SISR)**. We use a **pretrained unconditional diffusion model** as an image prior and enforce **measurement consistency** during sampling via a likelihood-guided gradient update (Gaussian / Poisson noise), with optional projection-style constraints.
+This repository implements **Diffusion Posterior Sampling (DPS)** for **single-image super-resolution (SISR)**. We use a **pretrained unconditional diffusion model** as an image prior and enforce **measurement consistency** during sampling via a likelihood-guided 
+gradient update (Gaussian / Poisson noise), with optional projection-style constraints.
+
+📝 You can read the full article here:  
+👉 [Arxiv](https://arxiv.org/pdf/2512.21797)
 
 ---
 
