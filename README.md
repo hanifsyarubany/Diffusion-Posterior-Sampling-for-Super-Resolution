@@ -6,7 +6,7 @@ This repository implements **Diffusion Posterior Sampling (DPS)** for **single-i
 
 ## DPS pipeline (forward + backward)
 
-The figure below illustrates the core idea used in this repo: at each diffusion step, the denoiser predicts a clean estimate \(\hat{x}_0\), we apply the forward operator \(\mathcal{A}(\cdot)\) to compare with the measurement \(y\), and then **backpropagate the mismatch** to guide the reverse diffusion update.
+The figure below illustrates the core idea used in this repo: at each diffusion step, the denoiser predicts a clean estimate $$\(\hat{x}_0\)$$, we apply the forward operator $$\(\mathcal{A}(\cdot)\)$$ to compare with the measurement $$\(y\)$$, and then **backpropagate the mismatch** to guide the reverse diffusion update.
 
 ![DPS pipeline: denoise → apply forward model → compute residual → backprop guidance](figures/dps_pipeline.jpg)
 
@@ -29,14 +29,14 @@ A qualitative comparison of multiple conditioning strategies implemented in (or 
 ## Method overview
 
 We consider the inverse problem:
-\[
+$$\[
 y = \mathcal{A}(x_0) + n,
-\]
-where \(\mathcal{A}\) is the degradation operator for SISR (e.g., downsampling), and \(n\) is measurement noise. DPS approximates the intractable likelihood term at diffusion time \(t\) by using a denoised estimate \(\hat{x}_0(x_t,t)\) and applying a gradient step:
-\[
+\]$$
+where $$\(\mathcal{A}\)$$ is the degradation operator for SISR (e.g., downsampling), and $$\(n\)$$ is measurement noise. DPS approximates the intractable likelihood term at diffusion time $$\(t\)$$ by using a denoised estimate \$$(\hat{x}_0(x_t,t)\)$$ and applying a gradient step:
+$$\[
 x_t \leftarrow x_t - \rho \nabla_{x_t}\|y - \mathcal{A}(\hat{x}_0)\|_2,
-\]
-where \(\rho\) is a guidance scale.
+\]$$
+where $$\(\rho\)$$ is a guidance scale.
 
 ---
 
