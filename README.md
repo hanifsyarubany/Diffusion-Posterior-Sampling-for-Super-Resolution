@@ -8,7 +8,7 @@ This repository implements **Diffusion Posterior Sampling (DPS)** for **single-i
 
 The figure below illustrates the core idea used in this repo: at each diffusion step, the denoiser predicts a clean estimate \(\hat{x}_0\), we apply the forward operator \(\mathcal{A}(\cdot)\) to compare with the measurement \(y\), and then **backpropagate the mismatch** to guide the reverse diffusion update.
 
-![DPS pipeline: denoise → apply forward model → compute residual → backprop guidance](figures/dps_pipeline.png)
+![DPS pipeline: denoise → apply forward model → compute residual → backprop guidance](figures/dps_pipeline.jpg)
 
 ---
 
